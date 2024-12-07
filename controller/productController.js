@@ -1,4 +1,4 @@
-const productModel = require("../Model/productModel")
+const productModel = require("../model/productModel")
 
 const userModel = require('../model/userModel'); // Adjust the path if necessary
 

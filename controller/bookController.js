@@ -1,7 +1,7 @@
 // Add this line at the top of the file
 const mongoose = require('mongoose');
 
- const bookModel= require("../../user_authentication/model/bookModel")
+ const bookModel= require("../model/bookModel")
 
  
 //user sign up
