@@ -1,5 +1,5 @@
 // 
-const UserModel= require("../../user_authentication/model/userModel")
+const UserModel= require("../model/userModel");
  
 //user sign up
 // exports.createUser = async (req, res) => {
