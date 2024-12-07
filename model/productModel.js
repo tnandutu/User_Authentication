@@ -10,5 +10,6 @@ const userSchema = new mongoose.Schema({
     Category: {type: String},
 })
 
+
 module.exports = mongoose.model("Products", userSchema);
 

@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
  
  
   //post method
-exports.createBook = async(req , res)=>{
+exports.createBooks = async(req , res)=>{
 try {
     const {title , description , category} = req.body
     if(!title && !description && !category){

@@ -1,13 +1,16 @@
 const productModel = require("../Model/productModel")
 
+const userModel = require('../model/userModel'); // Adjust the path if necessary
 
-exports.createproduct = async(req , res)=>{
+
+exports.createProduct = async(req , res)=>{
     try {
-        const { productName, price , Availability, Category} = req.body
-        
-        const ProductList = await bookModel.create({
-           productName  , price , Availability, Category
+      const getUser =await userModel.findById(req.params.userID)
+        const { productName, Price , Availability, Category} = req.body
+          const ProductList = await productModel.create({
+           productName  , Price , Availability, Category
         })
+        await getUser.Products.push(ProductList._id)
         return res.status(201).json({
             message : "these is our products",
             data : ProductList
@@ -19,7 +22,7 @@ exports.createproduct = async(req , res)=>{
 
       exports.getAllProducts = async (req, res) => {
         try {
-          const Products = await UserModel.find();
+          const Products = await userModel.find();
           return res.status(200).json({
             message: 'gotten all Products',
             data: Products,
@@ -82,3 +85,4 @@ exports.createproduct = async(req , res)=>{
 
     }
 
+    //module.exports = mongoose.model("Products", userSchema);
