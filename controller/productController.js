@@ -1,25 +1,22 @@
-const productModel = require("../model/productModel")
- 
- 
+const productModel = require("../Model/productModel")
+
+
 exports.createproduct = async(req , res)=>{
     try {
-        const { productName, Price , Availability, Category} = req.body
-       
+        const { productName, price , Availability, Category} = req.body
+        
         const ProductList = await bookModel.create({
            productName  , price , Availability, Category
         })
-
-        await getUser.Products.push(ProductList._id)
-        await getUser.save()
         return res.status(201).json({
             message : "these is our products",
             data : ProductList
         })
     } catch (error) {
-        console.error("couldn't found products here" , error)
+        console.error("couldn't find products here" , error)
     }
       }
- 
+
       exports.getAllProducts = async (req, res) => {
         try {
           const Products = await UserModel.find();
@@ -34,7 +31,7 @@ exports.createproduct = async(req , res)=>{
           });
         }
       };
- 
+
       exports.getOneById = async (req, res) => {
         try {
        const {id} = res.params
@@ -50,7 +47,7 @@ exports.createproduct = async(req , res)=>{
           });
         }
       };
- 
+
      
       exports.deleteProduct = async (req, res) => {
         try {
@@ -66,7 +63,7 @@ exports.createproduct = async(req , res)=>{
           });
         }
       };
-     
+      
       exports.updateProduct = async(req, res)=>{
         try {
           const {id} = req.params
@@ -82,5 +79,6 @@ exports.createproduct = async(req , res)=>{
             error
           })
         }
- 
+
     }
+

@@ -147,8 +147,8 @@ exports.getOneAndDelete = async(req , res)=>{
   }
 }
 
-Products : [
+Product : [
   {type : mongoose.Schema.Types.ObjectId ,
-    ref : "Products"
+    ref : "Product"
   }
 ]
